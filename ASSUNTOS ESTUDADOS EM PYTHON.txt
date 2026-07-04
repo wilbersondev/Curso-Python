@@ -1,0 +1,6 @@
+Olha o que você construiu em 3 dias:
+
+aula1.py -> Variáveis, listas, dicionários
+aula4.py -> Input e validação de CNPJ
+aula6.py -> Leitura de arquivo
+menu.py -> Sistema completo com menu
