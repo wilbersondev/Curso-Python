@@ -36,7 +36,7 @@ tabela.heading("Valor", text="Valor")
 tabela.heading("Categoria", text="Categoria")
 tabela.pack()
 categorias = ["Alimentação", "Transporte", "Saúde", "Lazer", "Outros"]
-combo = ttk.Combobox(janelas, values=categorias, state="readonly")
+combo = ttk.Combobox(janelas, values=categorias, state="readonly") # Combobox - é um campo de seleção — uma lista suspensa onde o usuário escolhe uma opção em vez de digitar livremente.
 combo.pack()
 
 def adicionar_gasto(): # essa função adiciona um gasto na tabela
@@ -46,7 +46,7 @@ def adicionar_gasto(): # essa função adiciona um gasto na tabela
         categoria = combo.get()
         if not  descricao or not valor or not categoria: # Verifica se todos os campos estão preenchidos
             raise ValueError("Por favor, preencha todos os campos.")
-        cursor.execute("INSERT INTO gastos (Descricao, Valor, Categoria) VALUES (?, ?, ?)", (descricao, valor, categoria))
+        cursor.execute("INSERT INTO   (Descricao, Valor, Categoria) VALUES (?, ?, ?)", (descricao, valor, categoria))
         conexao.commit()
         print("Salvo no banco:", descricao)
         listar_gastos()
@@ -55,7 +55,7 @@ def adicionar_gasto(): # essa função adiciona um gasto na tabela
         messagebox.showinfo("Sucesso", "Gasto cadastrado com sucesso!")
     except ValueError:
          messagebox.showerror("Erro", "Valor inválido!")
-botao_gasto= tk.Button(janelas, text="Adicionar Gasto", command=adicionar_gasto)
+botao_gasto= tk.Button(janelas, text="Adicionar Gasto", command=adicionar_gasto) 
 botao_gasto.pack()
 
 def listar_gastos(): # essa função lista os gastos cadastrados na tabela
