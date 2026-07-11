@@ -101,7 +101,7 @@ def excluir():
     valores = item["values"]
     id_cliente = valores[0]
     #EXCLUIR O CLIENTE DO BANCO DE DADOS
-    cursor.execute("DELETE FROM cliente WHERE id = ?", (id_cliente,))
+    cursor.execute("DELETE FROM cliente WHERE id = ?", (id_cliente))
     conexao.commit() #salvar as alterações no banco de dados
     listar()
     #Para mostrar uma mensagem de confirmação na janela
